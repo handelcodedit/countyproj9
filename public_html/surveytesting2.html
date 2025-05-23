@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+
+
+    <link rel="stylesheet" href="/css/survey_style.css">
+    <link rel="stylesheet" href="/css/master_style.css">
+
+    <script src="/javascript/session.js"></script>
+    <title>Survey</title>
+
+    <script>
+
+
+        function fetchProjects() {
+            const sessionID = getCookie('session_id');
+            if (!sessionID) {
+                console.error("Session ID not found in cookies.");
+                return;
+            }
+
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', 'https://handel.pythonanywhere.com/survey_testing', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    try {
+                        const response = JSON.parse(xhr.responseText);
+                        if (response.error) {
+                            console.error("Error fetching projects:", response.error);
+                        } else {
+                            displayProjects('projects-list-closed', response.closed_projects);
+                            displayProjects('projects-list-active', response.active_projects);
+                            displayProjects('projects-list-pipeline', response.pipeline_projects);
+                            displayProjects('projects-list-dropped', response.dropped_projects);
+                        }
+                    } catch (e) {
+                        console.error("Invalid JSON response:", e);
+                    }
+                }
+            };
+            xhr.send(`session_id=${encodeURIComponent(sessionID)}`);
+        }
+
+        function displayProjects(listId, projects) {
+            const listElement = document.getElementById(listId);
+            listElement.innerHTML = ''; // Clear previous items
+
+            projects.forEach(project => {
+                const item = document.createElement('li');
+                const radio = document.createElement('input');
+                radio.type = 'radio';
+                radio.name = listId; // Group by list
+                radio.value = project;
+
+                const label = document.createElement('label');
+                label.textContent = project;
+
+                item.appendChild(radio);
+                item.appendChild(label);
+                listElement.appendChild(item);
+            });
+        }
+
+        window.onload = fetchProjects;
+    </script>
+    <script>
+        function getCookie(name) {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                if (cookie.startsWith(name + '=')) {
+                    return cookie.substring(name.length + 1);
+                }
+            }
+            return null;
+        }
+        function fetchProjects() {
+            const sessionID = getCookie('session_id');
+            if (!sessionID) {
+                console.error("Session ID not found in cookies.");
+                return;
+            }
+
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', 'https://handel.pythonanywhere.com/survey_testing', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    try {
+                        const response = JSON.parse(xhr.responseText);
+                        if (response.error) {
+                            console.error("Error fetching projects:", response.error);
+                        } else {
+                            displayProjects('projects-list-closed', response.closed_projects);
+                            displayProjects('projects-list-active', response.active_projects);
+                            displayProjects('projects-list-pipeline', response.pipeline_projects);
+                            displayProjects('projects-list-dropped', response.dropped_projects);
+                        }
+                    } catch (e) {
+                        console.error("Invalid JSON response:", e);
+                    }
+                }
+            };
+            xhr.send(`session_id=${encodeURIComponent(sessionID)}`);
+        }
+
+        function displayProjects(listId, projects) {
+            const listElement = document.getElementById(listId);
+            listElement.innerHTML = ''; // Clear previous items
+
+            projects.forEach(project => {
+                const item = document.createElement('li');
+                const radio = document.createElement('input');
+                radio.type = 'radio';
+                radio.name = listId; // Group by list
+                radio.value = project;
+
+                const label = document.createElement('label');
+                label.textContent = project;
+
+                item.appendChild(radio);
+                item.appendChild(label);
+                listElement.appendChild(item);
+            });
+        }
+
+        window.onload = fetchProjects;
+
+
+
+        function toggleSuggestions() {
+            var suggestionsTextArea = document.getElementById('suggestions-text');
+            var suggestionsYes = document.getElementById('suggestions-yes').checked;
+
+            if (suggestionsYes) {
+                suggestionsTextArea.style.display = 'block';
+            } else {
+                suggestionsTextArea.style.display = 'none';
+            }
+        }
+
+        function submitSurvey(event) {
+            event.preventDefault(); // Prevent form from submitting the traditional way
+
+            var sessionID = getCookie('session_id');
+            var finishedProject = document.querySelector('input[name="projects-list-closed"]:checked');
+            var ongoingProject = document.querySelector('input[name="projects-list-active"]:checked');
+            var proposedProject = document.querySelector('input[name="projects-list-pipeline"]:checked');
+            var droppedProject = document.querySelector('input[name="projects-list-dropped"]:checked');
+
+            var questions = [
+                { name: 'project_awareness', id: 'question1' },
+                { name: 'projects_communication_channels', id: 'question2' },
+                { name: 'project_impact', id: 'question3' },
+                { name: 'project_negative_effects', id: 'question4' },
+                { name: 'project_participation', id: 'question5' },
+                { name: 'public_input', id: 'question6' },
+                { name: 'project_completion_status', id: 'question7' },
+                { name: 'prioritize_project_completion', id: 'question8' },
+                { name: 'budget_allocation_awareness', id: 'question9' },
+                { name: 'financial_management', id: 'question10' },
+                { name: 'infrastructure_development', id: 'question11' },
+                { name: 'environmental_impact', id: 'question12' },
+                { name: 'project_planning', id: 'question13' },
+                { name: 'inclusivity_in_project_implementation', id: 'question14' },
+                { name: 'impact_on_specific_demographics', id: 'question15' },
+                { name: 'future_project_preferences', id: 'question16' },
+                { name: 'suggestions', id: 'question17' },
+            ];
+
+            var params = 'session_id=' + encodeURIComponent(sessionID) +
+                         '&finished_project=' + encodeURIComponent(finishedProject ? finishedProject.value : '') +
+                         '&ongoing_project=' + encodeURIComponent(ongoingProject ? ongoingProject.value : '') +
+                         '&proposed_project=' + encodeURIComponent(proposedProject ? proposedProject.value : '') +
+                         '&dropped_project=' + encodeURIComponent(droppedProject ? droppedProject.value : '');
+
+            questions.forEach(function(question) {
+                var response = document.querySelector('input[name="' + question.id + '"]:checked');
+                params += '&' + question.name + '=' + encodeURIComponent(response ? response.value : '');
+            });
+
+            var suggestions = document.getElementById('suggestions-yes').checked
+                ? document.getElementById('suggestions-text').value
+                : 'no';
+            params += '&suggestions=' + encodeURIComponent(suggestions);
+
+            console.log("Request Params:", params);
+
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', 'https://handel.pythonanywhere.com/submit_survey', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        var response = JSON.parse(xhr.responseText);
+                        if (response.status === "success") {
+                            alert("Survey submitted successfully!");
+                        } else {
+                            alert("Error submitting survey: " + response.message);
+                        }
+                    } else {
+                        alert("Error: " + xhr.status);
+                    }
+                }
+            };
+            xhr.send(params);
+        }
+
+        function showPage(pageNumber) {
+            var pages = document.getElementsByClassName('page');
+            for (var i = 0; i < pages.length; i++) {
+                pages[i].style.display = 'none';
+            }
+            pages[pageNumber].style.display = 'block';
+        }
+
+        function nextPage() {
+            currentPage++;
+            if (currentPage >= pages.length - 1) {
+                currentPage = pages.length - 1;
+            }
+            showPage(currentPage);
+        }
+
+        function previousPage() {
+            currentPage--;
+            if (currentPage < 0) {
+                currentPage = 0;
+            }
+            showPage(currentPage);
+        }
+
+        var currentPage = 0;
+        var pages;
+        window.onload = function() {
+            fetchProjects();
+            pages = document.getElementsByClassName('page');
+            showPage(currentPage);
+        }
+    </script>
+    <style>
+        .page {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+     <!-- Navigation Bar -->
+      <nav class="navbar">
+         <div class="menu-left">
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
+    </div>
+    <ul class="nav-links" id="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="userprofile.html">User Profile</a></li>
+            <li><a href="surveytesting2.html">Survey</a></li>
+            <li><a href="dashboard5.html">Dashboard</a></li>
+        </ul>
+
+        <!-- Centered Text Logo -->
+
+
+        <form action="https://handel.pythonanywhere.com/logout" method="POST">
+            <input type="hidden" name="session_id" id="session_id">
+            <button type="submit" class="logout-btn">LOGOUT</button>
+        </form>
+    </nav>
+
+    <div class="survey-container" >
+    <form id="survey-form" action=" https://handel.pythonanywhere.com/submit_survey" method="POST" onsubmit="submitSurvey(event)">
+        <div class="survey-section">
+        <div  class="page">
+            <p>Which of the following finished projects in your ward are you aware of?</p>
+            <ul id="projects-list-closed"></ul>
+            <button type="button" onclick="nextPage()">Next</button>
+        </div>
+        <div  class="page">
+            <p>Which of the following ongoing projects in your ward are you aware of?</p>
+            <ul id="projects-list-active"></ul>
+            <button type="button" onclick="previousPage()">Previous</button>
+            <button type="button" onclick="nextPage()">Next</button>
+        </div>
+        <div class="page">
+            <p>Which of the following proposed projects in your ward are you aware of?</p>
+            <ul id="projects-list-pipeline"></ul>
+            <button type="button" onclick="previousPage()">Previous</button>
+            <button type="button" onclick="nextPage()">Next</button>
+        </div>
+        <div class="page">
+            <p>Which of the following dropped projects in your ward are you aware of?</p>
+            <ul id="projects-list-dropped"></ul>
+            <button type="button" onclick="previousPage()">Previous</button>
+            <button type="button" onclick="nextPage()">Next</button>
+
+
+        </div>
+
+        <div  class="page">
+            <p>How informed do you feel about the various projects happening in your county?</p>
+            <ul>
+                <li><input type="radio" name="question1" value="Very informed"> Very informed</li>
+                <li><input type="radio" name="question1" value="Somewhat informed"> Somewhat informed</li>
+                <li><input type="radio" name="question1" value="Not informed"> Not informed</li>
+            </ul>
+            <button type="button" onclick="previousPage()">Previous</button>
+            <button type="button" onclick="nextPage()">Next</button>
+        </div>
+        <div  class="page">
+            <p>Are there communication channels through which you receive updates about county projects?</p>
+            <ul>
+                <li><input type="radio" name="question2" value="Yes"> Yes</li>
+                <li><input type="radio" name="question2" value="No"> No</li>
+            </ul>
+            <button type="button" onclick="previousPage()">Previous</button>
+            <button type="button" onclick="nextPage()">Next</button>
+        </div>
+        <div  class="page">
+            <p>In your opinion, how have the ongoing projects positively impacted the community?</p>
+            <ul>
+                <li><input type="radio" name="question3" value="Significant impact"> Significant impact</li>
+                <li><input type="radio" name="question3" value="Moderate impact"> Moderate impact</li>
+                <li><input type="radio" name="question3" value="No impact"> No impact</li>
+            </ul>
+            <button type="button" onclick="previousPage()">Previous</button>
+            <button type="button" onclick="nextPage()">Next</button>
+        </div>
+        <div  class="page">
+            <p>Can you identify any challenges or negative effects caused by the projects?</p>
+            <ul>
+                <li><input type="radio" name="question4" value="Yes"> Yes</li>
+                                <li><input type="radio" name="question4" value="No"> No</li>
+            </ul>
+            <button type="button" onclick="previousPage()">Previous</button>
+            <button type="button" onclick="nextPage()">Next</button>
+        </div>
+        <div  class="page">
+            <p>Have you participated in any of the county projects?</p>
+            <ul>
+                <li><input type="radio" name="question5" value="Yes"> Yes</li>
+                <li><input type="radio" name="question5" value="No"> No</li>
+            </ul>
+            <button type="button" onclick="previousPage()">Previous</button>
+            <button type="button" onclick="nextPage()">Next</button>
+        </div>
+        <div  class="page">
+            <p>How much public input is incorporated into the project planning process?</p>
+            <ul>
+                <li><input type="radio" name="question6" value="A lot"> A lot</li>
+                <li><input type="radio" name="question6" value="Some"> Some</li>
+                <li><input type="radio" name="question6" value="None"> None</li>
+            </ul>
+            <button type="button" onclick="previousPage()">Previous</button>
+            <button type="button" onclick="nextPage()">Next</button>
+        </div>
+        <div  class="page">
+            <p>Are the projects completed within the proposed timelines?</p>
+            <ul>
+                <li><input type="radio" name="question7" value="Always"> Always</li>
+                <li><input type="radio" name="question7" value="Sometimes"> Sometimes</li>
+                <li><input type="radio" name="question7" value="Never"> Never</li>
+            </ul>
+            <button type="button" onclick="previousPage()">Previous</button>
+            <button type="button" onclick="nextPage()">Next</button>
+        </div>
+        <div  class="page">
+            <p>Should project completion be prioritized over initiating new projects?</p>
+            <ul>
+                <li><input type="radio" name="question8" value="Yes"> Yes</li>
+                <li><input type="radio" name="question8" value="No"> No</li>
+            </ul>
+            <button type="button" onclick="previousPage()">Previous</button>
+            <button type="button" onclick="nextPage()">Next</button>
+        </div>
+        <div  class="page">
+            <p>Are you aware of the county’s budget allocation for different projects?</p>
+            <ul>
+                <li><input type="radio" name="question9" value="Yes"> Yes</li>
+                <li><input type="radio" name="question9" value="No"> No</li>
+            </ul>
+            <button type="button" onclick="previousPage()">Previous</button>
+            <button type="button" onclick="nextPage()">Next</button>
+        </div>
+        <div  class="page">
+            <p>How would you rate the financial management of the county projects?</p>
+            <ul>
+                <li><input type="radio" name="question10" value="Excellent"> Excellent</li>
+                <li><input type="radio" name="question10" value="Good"> Good</li>
+                <li><input type="radio" name="question10" value="Poor"> Poor</li>
+            </ul>
+            <button type="button" onclick="previousPage()">Previous</button>
+            <button type="button" onclick="nextPage()">Next</button>
+        </div>
+        <div  class="page">
+            <p>What is your opinion on the current infrastructure development in your area?</p>
+            <ul>
+                <li><input type="radio" name="question11" value="Satisfactory"> Satisfactory</li>
+                <li><input type="radio" name="question11" value="Needs Improvement"> Needs Improvement</li>
+                <li><input type="radio" name="question11" value="Unsatisfactory"> Unsatisfactory</li>
+            </ul>
+            <button type="button" onclick="previousPage()">Previous</button>
+            <button type="button" onclick="nextPage()">Next</button>
+        </div>
+
+        <div  class="page">
+            <p>Do you think the projects have had any environmental impact?</p>
+            <ul>
+                <li><input type="radio" name="question12" value="Positive"> Positive</li>
+                <li><input type="radio" name="question12" value="Negative"> Negative</li>
+                <li><input type="radio" name="question12" value="No Impact"> No Impact</li>
+            </ul>
+            <button type="button" onclick="previousPage()">Previous</button>
+            <button type="button" onclick="nextPage()">Next</button>
+        </div>
+        <div  class="page">
+            <p>How effective is the project planning and execution process?</p>
+            <ul>
+                <li><input type="radio" name="question13" value="Very Effective"> Very Effective</li>
+                <li><input type="radio" name="question13" value="Moderately Effective"> Moderately Effective</li>
+                <li><input type="radio" name="question13" value="Not Effective"> Not Effective</li>
+            </ul>
+            <button type="button" onclick="previousPage()">Previous</button>
+            <button type="button" onclick="nextPage()">Next</button>
+        </div>
+        <div  class="page">
+
+            <p>Is there inclusivity in project implementation?</p>
+            <ul>
+                <li><input type="radio" name="question14" value="Yes"> Yes</li>
+                <li><input type="radio" name="question14" value="No"> No</li>
+            </ul>
+            <button type="button" onclick="previousPage()">Previous</button>
+            <button type="button" onclick="nextPage()">Next</button>
+        </div>
+        <div  class="page">
+
+            <p>Do the projects impact specific demographics differently?</p>
+            <ul>
+                <li><input type="radio" name="question15" value="Yes"> Yes</li>
+                <li><input type="radio" name="question15" value="No"> No</li>
+            </ul>
+            <button type="button" onclick="previousPage()">Previous</button>
+            <button type="button" onclick="nextPage()">Next</button>
+        </div>
+        <div  class="page">
+            <p>What types of projects would you like to see in the future?</p>
+            <ul>
+                <li><input type="radio" name="question16" value="Infrastructure"> Infrastructure</li>
+                <li><input type="radio" name="question16" value="Healthcare"> Healthcare</li>
+                <li><input type="radio" name="question16" value="Education"> Education</li>
+                <li><input type="radio" name="question16" value="Environment"> Environment</li>
+            </ul>
+            <button type="button" onclick="previousPage()">Previous</button>
+            <button type="button" onclick="nextPage()">Next</button>
+        </div>
+        <div  class="page">
+            <p>Would you like to provide any suggestions for future projects?</p>
+            <ul>
+                <li><input type="radio" id="suggestions-yes" name="suggestions" value="Yes" onclick="toggleSuggestions()"> Yes</li>
+                <li><input type="radio" id="suggestions-no" name="suggestions" value="No" onclick="toggleSuggestions()"> No</li>
+            </ul>
+            <textarea id="suggestions-text" style="display:none;"></textarea>
+            <button type="button" onclick="previousPage()">Previous</button>
+            <button type="submit">Submit</button>
+        </div>
+        </div>
+    </form>
+</div>
+     <!-- Footer -->
+     <footer class="footer">
+        &copy; 2025 All rights reserved. handelcodedit.
+    </footer>
+     <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    if (toggle && navLinks) {
+      toggle.addEventListener("click", function () {
+        navLinks.classList.toggle("show");
+      });
+    }
+  });
+</script>
+</body>
+</html>

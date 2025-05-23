@@ -1,0 +1,109 @@
+/* Registration Form Styling */
+.maincontainer{
+    display: flex;
+   
+    min-height: 100vh;  /* Full viewport height */
+}
+.register-container {
+    display: flex;
+    justify-content: center;  /* Centers horizontally */
+    align-items: center;  /* Centers vertically */
+    min-height: 70vh;  /* Full viewport height */
+}
+
+.redirect-div{
+    display: flex;
+    justify-content: center;  /* Centers horizontally */
+    align-items: center;
+    
+}
+
+.registration-form {
+    
+    width: 100%;
+    max-width: 500px; /* Restrict width for better readability */
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+/* Style for labels and input fields */
+.registration-form label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+    color: #228B22; /* Green color for labels */
+}
+
+.registration-form h2 {
+    color:#1c6b1c; /* Darker Green */
+}
+
+.registration-form input,
+.registration-form select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+/* Submit Button - Same as Logout Button */
+.registration-form input[type="submit"] {
+    display: block;
+    width: 100%;
+    background-color: #1c6b1c; /* Darker Green */
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 15px;
+}
+.btn_general{
+    display: block;
+    width: 100%;
+    background-color: #1c6b1c; /* Darker Green */
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 15px;   
+}
+
+.registration-form input[type="submit"]:hover {
+    background-color: #145214;
+}
+
+.maincontainered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    width: 100%;
+}
+
+.editprofile-container {
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 500px;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+

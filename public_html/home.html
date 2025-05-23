@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Home</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/master_style.css">
+    <script src="/javascript/session.js"></script>
+
+
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+         <div class="menu-left">
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
+    </div>
+    <ul class="nav-links" id="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="userprofile.html">User Profile</a></li>
+            <li><a href="surveytesting2.html">Survey</a></li>
+            <li><a href="dashboard5.html">Dashboard</a></li>
+        </ul>
+
+        <!-- Centered Text Logo -->
+
+
+        <form action="https://handel.pythonanywhere.com/logout" method="POST">
+            <input type="hidden" name="session_id" id="session_id">
+            <button type="submit" class="logout-btn">LOGOUT</button>
+        </form>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <div class="logout-container">
+            <h2>Devolution in Your Hands</h2>
+            <p>
+                Welcome to the Online County Leadership Performance Evaluation System—a platform designed to enhance transparency,
+                accountability, and efficiency in county governance. Our system empowers citizens, policymakers, and oversight bodies
+                with real-time insights into county leadership performance, fostering better decision-making and equitable resource allocation.
+                Join us in shaping a more transparent and effective devolution system for Kenya’s 47 counties!
+            </p>
+            <br>
+            <a href="surveytesting2.html">TAKE SURVEY</a>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        &copy; 2025 All rights reserved. handelcodedit.
+    </footer>
+     <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    if (toggle && navLinks) {
+      toggle.addEventListener("click", function () {
+        navLinks.classList.toggle("show");
+      });
+    }
+  });
+</script>
+
+</body>
+</html>

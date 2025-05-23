@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluation Data</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/master_style.css">
+    <script src="/javascript/session.js"></script>
+    <style>
+        #evaluationTable_wrapper {
+            margin: 20px;
+        }
+        </style>
+
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+    <div class="menu-left">
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
+    </div>
+    <ul class="nav-links" id="nav-links">
+        <li><a href="adminhome.html">Home</a></li>
+        <li><a href="admin_userprofile.html">User Profile</a></li>
+        <li><a href="admin_survey.html">Survey</a></li>
+        <li><a href="admin_dashboard.html">Dashboard</a></li>
+        <li><a href="govdesk.html">GovDesk</a></li>
+    </ul>
+
+        <form action="https://handel.pythonanywhere.com/logout" method="POST">
+            <input type="hidden" name="session_id" id="session_id">
+            <button type="submit" class="logout-btn">LOGOUT</button>
+        </form>
+</nav>
+    <table id="evaluationTable" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>User ID</th>
+                <th>Evaluation Date</th>
+                <th>Closed PID</th>
+                <th>Active PID</th>
+                <th>Proposed PID</th>
+                <th>Dropped PID</th>
+                <th>Project Awareness</th>
+                <th>Projects Communication Channels</th>
+                <th>Project Impact</th>
+                <th>Project Negative Effects</th>
+                <th>Project Participation</th>
+                <th>Public Input</th>
+                <th>Project Completion Status</th>
+                <th>Prioritize Project Completion</th>
+                <th>Budget Allocation Awareness</th>
+                <th>Financial Management</th>
+                <th>Infrastructure Development</th>
+                <th>Environmental Impact</th>
+                <th>Project Planning</th>
+                <th>Inclusivity in Project Implementation</th>
+                <th>Impact on Specific Demographics</th>
+                <th>Future Project Preferences</th>
+                <th>Suggestions</th>
+                <th>Ward ID</th>
+                <th>County ID</th>
+            </tr>
+        </thead>
+    </table>
+
+    <script>
+       $(document).ready(function() {
+    $('#evaluationTable').DataTable({
+        "processing": true,
+        "serverSide": true,
+        "ajax": "https://handel.pythonanywhere.com/manage_evaluations",
+        "paging": true,  // Ensure pagination is enabled
+        "lengthMenu": [10, 25, 50, 100],  // Dropdown for number of records per page
+        "columns": [
+            { "data": "id", "searchable": true },
+            { "data": "user_id", "searchable": true },
+            { "data": "evaluation_date", "searchable": true },
+            { "data": "closed_pid", "searchable": true },
+            { "data": "active_pid", "searchable": true },
+            { "data": "proposed_pid", "searchable": true },
+            { "data": "dropped_pid", "searchable": true },
+            { "data": "project_awareness", "searchable": false },
+            { "data": "projects_communication_channels", "searchable": false },
+            { "data": "project_impact", "searchable": false },
+            { "data": "project_negative_effects", "searchable": false },
+            { "data": "project_participation", "searchable": false },
+            { "data": "public_input", "searchable": false },
+            { "data": "project_completion_status", "searchable": false },
+            { "data": "prioritize_project_completion", "searchable": false },
+            { "data": "budget_allocation_awareness", "searchable": false },
+            { "data": "financial_management", "searchable": false },
+            { "data": "infrastructure_development", "searchable": false },
+            { "data": "environmental_impact", "searchable": false },
+            { "data": "project_planning", "searchable": false },
+            { "data": "inclusivity_in_project_implementation", "searchable": false },
+            { "data": "impact_on_specific_demographics", "searchable": false },
+            { "data": "future_project_preferences", "searchable": false },
+            { "data": "suggestions", "searchable": false },
+            { "data": "ward_id", "searchable": true },
+
+
+        ]
+    });
+});
+
+    </script>
+    <!-- Footer -->
+    <footer class="footer">
+        &copy; 2025 All rights reserved. handelcodedit.
+    </footer>
+     <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    if (toggle && navLinks) {
+      toggle.addEventListener("click", function () {
+        navLinks.classList.toggle("show");
+      });
+    }
+  });
+</script>
+</body>
+</html>

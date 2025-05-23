@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/master_style.css">
+    <link rel="stylesheet" href="/css/register_style.css">
+    <link rel="stylesheet" href="/css/userprofile_style.css">
+    <script src="/javascript/session.js">
+        $.fn.dataTable.ext.errMode = 'none';
+    </script>
+    <script src="/javascript/validate2.js"></script>
+    <title>Edit Profile</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul class="nav-links">
+            <li><a href="adminhome.html">Home</a></li>
+            <li><a href="admin_userprofile.html">User Profile</a></li>
+            <li><a href="admin_survey.html">Survey</a></li>
+            <li><a href="admin_dashboard.html">Dashboard</a></li>
+            <li><a href="govdesk.html">GovDesk</a></li>
+        </ul>
+
+        <form action="https://handel.pythonanywhere.com/logout" method="POST">
+            <input type="hidden" name="session_id" id="session_id">
+            <button  type="submit" class="logout-btn">LOGOUT</button>
+        </form>
+    </nav>
+    <div class="maincontainered">
+        <div class="editprofile-container">
+            <form id="editProfileForm" class="registration-form" action="https://handel.pythonanywhere.com/editprofile" method="POST">
+
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username">
+
+              <label for="email">Email:</label>
+                <input type="text" id="email" name="email" readonly>
+                <label for="phone">Phone:</label>
+            <input type="text" id="phone" name="phone">
+
+                <label for="fname">First Name:</label>
+                <input type="text" id="fname" name="fname">
+
+                <label for="lname">Last Name:</label>
+                <input type="text" id="lname" name="lname">
+
+                <label for="gender">Select Gender:</label>
+                <select name="gender" id="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                </select>
+
+                <label for="dob">DOB:</label>
+                <input type="text" id="dob" name="dob">
+
+                <label for="role">Select Role:</label>
+                <select name="role" id="role">
+                    <option value="user">User</option>
+                    <option value="admin">Admin</option>
+                    <option value="governor">Governor</option>
+                    <option value="senator">Senator</option>
+                    <option value="mca">MCA</option>
+                </select>
+
+                <label for="county_id">County:</label>
+                <select name="county_id" id="county_id">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="7">7</option>
+                    <option value="11">11</option>
+                    <option value="14">14</option>
+                    <option value="16">16</option>
+                    <option value="21">21</option>
+                    <option value="26">26</option>
+                    <option value="27">27</option>
+                    <option value="32">32</option>
+                    <option value="35">35</option>
+                    <option value="39">39</option>
+                    <option value="41">41</option>
+                    <option value="42">42</option>
+                    <option value="47">47</option>
+                </select>
+
+                <label for="ward">Ward:</label>
+                <select id="ward" name="ward"></select>
+
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address">
+
+                <label for="achievements">Achievements:</label>
+                <input type="text" id="achievements" name="achievements">
+
+                <label for="occupation">Occupation:</label>
+                <input type="text" id="occupation" name="occupation">
+
+                <label for="marital_status">Marital Status:</label>
+                <input type="text" id="marital_status" name="marital_status">
+
+                <label for="education_level">Education Level:</label>
+                <input type="text" id="education_level" name="education_level">
+
+
+                <button class="btn_general" type="submit">Update Profile</button>
+
+            </form>
+        </div>
+    </div>
+
+    <footer class="footer">
+        &copy; 2025 All rights reserved. handelcodedit.
+    </footer>
+</body>
+</html>

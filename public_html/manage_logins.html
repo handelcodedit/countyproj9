@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manage Logins</title>
+
+    <!-- DataTables & jQuery -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+
+    <!-- Master CSS -->
+    <link rel="stylesheet" href="/css/master_style.css">
+    <script src="/javascript/session.js"></script>
+
+    <style>
+        #loginsTable_wrapper { margin: 20px; }
+        .delete-btn {
+            background-color: red;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .delete-btn:hover { background-color: darkred; }
+    </style>
+
+    <script>
+        $(document).ready(function() {
+            function deleteLogin(sessionId) {
+                if (confirm("Are you sure you want to delete this login session?")) {
+                    $("#delete_session_id").val(sessionId);
+                    $("#deleteForm").submit();
+                }
+            }
+
+            let table = $('#loginsTable').DataTable({
+                "ajax": "https://handel.pythonanywhere.com/manage_logins",
+                "columns": [
+                    { "data": "session_id" },
+                    { "data": "email" },
+                    { "data": "session_creation" },
+                    { "data": "session_expiry" },
+                    {
+                        "data": null,
+                        "render": function (data, type, row) {
+                            return `<button class="delete-btn" data-id="${row.session_id}">Delete</button>`;
+                        }
+                    }
+                ],
+                "searching": true
+            });
+
+            // Attach delete event dynamically
+            $("#loginsTable tbody").on("click", ".delete-btn", function() {
+                const sessionId = $(this).attr("data-id");
+                deleteLogin(sessionId);
+            });
+
+        });
+    </script>
+</head>
+<body>
+
+    <!-- Navigation Menu -->
+     <nav class="navbar">
+    <div class="menu-left">
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
+    </div>
+    <ul class="nav-links" id="nav-links">
+        <li><a href="adminhome.html">Home</a></li>
+        <li><a href="admin_userprofile.html">User Profile</a></li>
+        <li><a href="admin_survey.html">Survey</a></li>
+        <li><a href="admin_dashboard.html">Dashboard</a></li>
+        <li><a href="govdesk.html">GovDesk</a></li>
+    </ul>
+
+        <form action="https://handel.pythonanywhere.com/logout" method="POST">
+            <input type="hidden" name="session_id" id="session_id">
+            <button type="submit" class="logout-btn">LOGOUT</button>
+        </form>
+</nav>
+
+    <!-- Login Sessions Table -->
+    <table id="loginsTable" class="display">
+        <thead>
+            <tr>
+                <th>Session ID</th>
+                <th>Email</th>
+                <th>Session Creation</th>
+                <th>Session Expiry</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+    </table>
+
+    <!-- Hidden Delete Form -->
+    <form id="deleteForm" action="https://handel.pythonanywhere.com/delete_login" method="POST" class="hidden">
+        <input type="hidden" id="delete_session_id" name="session_id">
+    </form>
+
+    <!-- Footer -->
+    <footer class="footer">
+        &copy; 2025 All rights reserved. handelcodedit.
+    </footer>
+     <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    if (toggle && navLinks) {
+      toggle.addEventListener("click", function () {
+        navLinks.classList.toggle("show");
+      });
+    }
+  });
+</script>
+
+</body>
+</html>

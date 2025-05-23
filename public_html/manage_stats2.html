@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stats2 Table</title>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/master_style.css">
+    <script src="/javascript/session.js"></script>
+    <style>
+        #stats2Table_wrapper {
+            margin: 20px;
+        }
+        </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+     <nav class="navbar">
+    <div class="menu-left">
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
+    </div>
+    <ul class="nav-links" id="nav-links">
+        <li><a href="adminhome.html">Home</a></li>
+        <li><a href="admin_userprofile.html">User Profile</a></li>
+        <li><a href="admin_survey.html">Survey</a></li>
+        <li><a href="admin_dashboard.html">Dashboard</a></li>
+        <li><a href="govdesk.html">GovDesk</a></li>
+    </ul>
+
+        <form action="https://handel.pythonanywhere.com/logout" method="POST">
+            <input type="hidden" name="session_id" id="session_id">
+            <button type="submit" class="logout-btn">LOGOUT</button>
+        </form>
+</nav>
+    <table id="stats2Table" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>County ID</th>
+                <th>Project Completion</th>
+                <th>Completion Percentage</th>
+                <th>Initiative</th>
+                <th>Proposal Success</th>
+                <th>Project Awareness</th>
+                <th>Effective Communication</th>
+                <th>Impact on the Community</th>
+                <th>Public Participation</th>
+                <th>Project Management</th>
+                <th>Budget Allocation Awareness</th>
+                <th>Financial Management</th>
+                <th>Infrastructure Development</th>
+                <th>Sustainability</th>
+                <th>Inclusivity</th>
+                <th>Impact on Specific Demographics</th>
+                <th>Total Score</th>
+            </tr>
+        </thead>
+    </table>
+
+    <script>
+       $(document).ready(function() {
+            $('#stats2Table').DataTable({
+                "processing": true,
+                "serverSide": true,
+                "ajax": "https://handel.pythonanywhere.com/manage_stats2",
+                "paging": true,  // Enable pagination
+                "lengthMenu": [10, 25, 50, 100],  // Dropdown for records per page
+                "columns": [
+                    { "data": "county_id", "searchable": true },
+                    { "data": "project_completion", "searchable": false },
+                    { "data": "completion_percentage", "searchable": false },
+                    { "data": "initiative", "searchable": false },
+                    { "data": "proposal_success", "searchable": false },
+                    { "data": "project_awareness", "searchable": false },
+                    { "data": "effective_communication", "searchable": false },
+                    { "data": "impact_on_the_community", "searchable": false },
+                    { "data": "public_participation", "searchable": false },
+                    { "data": "project_management", "searchable": false },
+                    { "data": "budget_allocation_awareness", "searchable": false },
+                    { "data": "financial_management", "searchable": false },
+                    { "data": "infrastructure_development", "searchable": false },
+                    { "data": "sustainability", "searchable": false },
+                    { "data": "inclusivity", "searchable": false },
+                    { "data": "impact_on_specific_demographics", "searchable": false },
+                    { "data": "total_score", "searchable": false }
+                ]
+            });
+        });
+    </script>
+     <!-- Footer -->
+     <footer class="footer">
+        &copy; 2025 All rights reserved. handelcodedit.
+    </footer>
+     <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    if (toggle && navLinks) {
+      toggle.addEventListener("click", function () {
+        navLinks.classList.toggle("show");
+      });
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/master_style.css">
+    <link rel="stylesheet" href="/css/register_style.css">
+    <link rel="stylesheet" href="/css/userprofile_style.css">
+    <script src="/javascript/session.js"></script>
+    <title>User Profile</title>
+
+</head>
+
+<body onload="fetchUserProfile()">
+
+     <!-- Navigation Bar -->
+      <nav class="navbar">
+    <div class="menu-left">
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
+    </div>
+    <ul class="nav-links" id="nav-links">
+        <li><a href="adminhome.html">Home</a></li>
+        <li><a href="admin_userprofile.html">User Profile</a></li>
+        <li><a href="admin_survey.html">Survey</a></li>
+        <li><a href="admin_dashboard.html">Dashboard</a></li>
+        <li><a href="govdesk.html">GovDesk</a></li>
+    </ul>
+
+        <form action="https://handel.pythonanywhere.com/logout" method="POST">
+            <input type="hidden" name="session_id" id="session_id">
+            <button type="submit" class="logout-btn">LOGOUT</button>
+        </form>
+</nav>
+
+    <div class="main-content">
+
+        <div class="profile-actions">
+            <button type="submit" class="btn"><a href="admin_updateprof.html">UPDATE PROFILE</a></button>
+            <button type="submit" class="btn"><a href="admin_forgotpass.html">CHANGE PASSWORD</a></button>
+        </div>
+
+        <div class="user-info">
+            <p><strong>Role:</strong> <span id="role"></span></p>
+            <p><strong>ID:</strong> <span id="user-id"></span></p>
+            <p><strong>Username:</strong> <span id="user-username"></span></p>
+            <p><strong>Email:</strong> <span id="user-email"></span></p>
+            <p><strong>First Name:</strong> <span id="user-fname"></span></p>
+            <p><strong>Last Name:</strong> <span id="user-lname"></span></p>
+            <p><strong>County ID:</strong> <span id="user-county_id"></span></p>
+            <p><strong>Ward ID:</strong> <span id="user-ward_id"></span></p>
+            <p><strong>Address:</strong> <span id="user-address"></span></p>
+            <p><strong>DOB:</strong> <span id="user-DOB"></span></p>
+            <p><strong>Gender:</strong> <span id="user-gender"></span></p>
+            <p><strong>Education Level:</strong> <span id="user-education_level"></span></p>
+            <p><strong>Occupation:</strong> <span id="user-occupation"></span></p>
+            <p><strong>Marital Status:</strong> <span id="user-marital_status"></span></p>
+            <p><strong>Achievements:</strong> <span id="achievements"></span></p>
+            <p><strong>Registration Date:</strong> <span id="registration_date"></span></p>
+        </div>
+    </div>
+
+      <!-- Footer -->
+      <footer class="footer">
+        &copy; 2025 All rights reserved. handelcodedit.
+    </footer>
+
+    <script>
+        function getCookie(name) {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                if (cookie.startsWith(name + '=')) {
+                    return cookie.substring(name.length + 1);
+                }
+            }
+            return null;
+        }
+
+        function fetchUserProfile() {
+            var sessionID = getCookie('session_id');
+            if (!sessionID) {
+                alert("Session ID is missing in cookies.");
+                return;
+            }
+
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        var responseText = xhr.responseText;
+
+                        // Parse the JSON response
+                        var user_data = JSON.parse(responseText);
+                        if (user_data.error) {
+                            alert(user_data.error);
+                        } else {
+                            setFormValues(user_data);  // Pass the user_data to update the page fields
+                        }
+                    } else {
+                        alert("Failed to fetch user profile: " + xhr.status);
+                    }
+                }
+            };
+            xhr.open('POST', 'https://handel.pythonanywhere.com/fetch_user_profile', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.send('session_id=' + encodeURIComponent(sessionID));
+        }
+
+        function setFormValues(user_data) {
+            // Update the page with user data
+            document.getElementById('role').innerText = user_data.role || 'N/A';
+            document.getElementById('user-id').innerText = user_data.id || 'N/A';
+            document.getElementById('user-username').innerText = user_data.username || 'N/A';
+            document.getElementById('user-email').innerText = user_data.email || 'N/A';
+            document.getElementById('user-fname').innerText = user_data.fname || 'N/A';
+            document.getElementById('user-lname').innerText = user_data.lname || 'N/A';
+            document.getElementById('user-county_id').innerText = user_data.county_id || 'N/A';
+            document.getElementById('user-ward_id').innerText = user_data.ward_id || 'N/A';
+            document.getElementById('user-address').innerText = user_data.address || 'N/A';
+            document.getElementById('user-DOB').innerText = user_data.dob || 'N/A';
+            document.getElementById('user-gender').innerText = user_data.gender || 'N/A';
+            document.getElementById('user-education_level').innerText = user_data.education_level || 'N/A';
+            document.getElementById('user-occupation').innerText = user_data.occupation || 'N/A';
+            document.getElementById('user-marital_status').innerText = user_data.marital_status || 'N/A';
+            document.getElementById('achievements').innerText = user_data.achievements || 'N/A';
+            document.getElementById('registration_date').innerText = user_data.registration_date || 'N/A';
+        }
+    </script>
+     <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    if (toggle && navLinks) {
+      toggle.addEventListener("click", function () {
+        navLinks.classList.toggle("show");
+      });
+    }
+  });
+</script>
+</body>
+
+</html>

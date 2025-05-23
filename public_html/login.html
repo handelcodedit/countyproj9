@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/register_style.css">
+    <link rel="stylesheet" href="/css/master_style.css">
+    <script src="/javascript/validate.js"></script>
+    <title>Login</title>
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-logo">COUNTY EVALUATION SYSTEM</div>
+    </nav>
+
+    <div class="register-container">
+
+       <form id="loginForm" class="registration-form" action="https://handel.pythonanywhere.com/logins" method="POST">
+
+
+            <input type="text" name="email" placeholder="Enter your email" id="email"><br>
+            <input type="text" name="password" placeholder="Enter your password" id="password"><br>
+
+            <button class="btn_general" type="submit" class="btn">Login</button>
+        </form>
+
+    </div>
+
+    <div class="redirect-div">
+        <a href="forgot_password.html">Forgot password ?</a>
+
+    </div>
+    <div class="redirect-div">
+        <a href="register.html">Don't have an account yet ? Sign up now!</a>
+    </div>
+    <!-- Footer -->
+    <footer class="footer">
+        &copy; 2025 All rights reserved. handelcodedit.
+    </footer>
+</body>
+</html>

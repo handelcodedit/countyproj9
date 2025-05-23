@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Management</title>
+
+    <!-- DataTables CSS -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+
+    <!-- jQuery and DataTables JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/master_style.css">
+    <script src="/javascript/session.js"></script>
+    <style>
+        #projectTable_wrapper {
+            margin: 20px;
+        }
+</style>
+
+</head>
+<body>
+
+
+     <!-- Navigation Bar -->
+     <nav class="navbar">
+    <div class="menu-left">
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
+    </div>
+    <ul class="nav-links" id="nav-links">
+        <li><a href="adminhome.html">Home</a></li>
+        <li><a href="admin_userprofile.html">User Profile</a></li>
+        <li><a href="admin_survey.html">Survey</a></li>
+        <li><a href="admin_dashboard.html">Dashboard</a></li>
+        <li><a href="govdesk.html">GovDesk</a></li>
+    </ul>
+
+        <form action="https://handel.pythonanywhere.com/logout" method="POST">
+            <input type="hidden" name="session_id" id="session_id">
+            <button type="submit" class="logout-btn">LOGOUT</button>
+        </form>
+</nav>
+    <table id="projectTable" class="display">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Ward ID</th>
+                <th>Proposed Date</th>
+                <th>Project Type</th>
+                <th>Project Name</th>
+                <th>County ID</th>
+                <th>Budget Estimate</th>
+                <th>Total Cost</th>
+                <th>Commence Date</th>
+                <th>Completion Date</th>
+                <th>Status</th>
+                <th>Period</th>
+                <th>Contractor</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <th><input type="text" placeholder="Search ID"></th>
+                <th><input type="text" placeholder="Search Ward ID"></th>
+                <th><input type="text" placeholder="Search Proposed Date"></th>
+                <th><input type="text" placeholder="Search Project Type"></th>
+                <th><input type="text" placeholder="Search Project Name"></th>
+                <th><input type="text" placeholder="Search County ID"></th>
+                <th><input type="text" placeholder="Search Budget"></th>
+                <th><input type="text" placeholder="Search Total Cost"></th>
+                <th><input type="text" placeholder="Search Commence Date"></th>
+                <th><input type="text" placeholder="Search Completion Date"></th>
+                <th><input type="text" placeholder="Search Status"></th>
+                <th><input type="text" placeholder="Search Period"></th>
+                <th><input type="text" placeholder="Search Contractor"></th>
+            </tr>
+        </tfoot>
+    </table>
+
+    <script>
+        $(document).ready(function () {
+            var table = $('#projectTable').DataTable({
+                "processing": true,
+                "serverSide": true,
+                "ajax": {
+                    "url": "https://handel.pythonanywhere.com/manage_projects",
+                    "type": "POST"
+                },
+                "columns": [
+                    { "data": "proposed_project_id" },
+                    { "data": "ward_id" },
+                    { "data": "proposed_date" },
+                    { "data": "project_type" },
+                    { "data": "project_name" },
+                    { "data": "county_id" },
+                    { "data": "budget_estimate" },
+                    { "data": "total_cost" },
+                    { "data": "commence_date" },
+                    { "data": "completion_date" },
+                    { "data": "status" },
+                    { "data": "period" },
+                    { "data": "contractor" }
+                ],
+                "searching": true, // Enable global search
+                "order": [[0, "desc"]],
+                "language": {
+                    "search": "Search All Columns:"
+                }
+            });
+
+            // Apply search on individual columns
+            $('#projectTable tfoot input').on('keyup change', function () {
+                var colIndex = $(this).parent().index();
+                table.column(colIndex).search(this.value).draw();
+            });
+        });
+    </script>
+     <!-- Footer -->
+     <footer class="footer">
+        &copy; 2025 All rights reserved. handelcodedit.
+    </footer>
+     <script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    if (toggle && navLinks) {
+      toggle.addEventListener("click", function () {
+        navLinks.classList.toggle("show");
+      });
+    }
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,2 @@
+2025-03-26 21:08:23,967 - DEBUG - Using PythonAnywhere DB config: {'host': 'handel.mysql.pythonanywhere-services.com', 'user': 'handel', 'password': 'Teknix96', 'database': 'handel$countyproj'}
+2025-03-26 21:08:23,979 - INFO - Database connection established successfully.

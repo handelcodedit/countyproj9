@@ -1,0 +1,407 @@
+[DEBUG] WSGI script triggered
+[DEBUG] Request method: GET
+[DEBUG] POST/GET data: email=handelgakuru@gmail.com
+[DEBUG] Parsed email: handelgakuru@gmail.com
+[DEBUG] forgot_password() called
+[DEBUG] DB connection object: <pymysql.connections.Connection object at 0x7b83bf341160>
+[DEBUG] Cursor created
+[DEBUG] User email lookup result: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] Token generated and DB updated for handelgakuru@gmail.com
+[DEBUG] Attempting SMTP login
+[DEBUG] Error in forgot_password(): please run connect() first
+[DEBUG] Cursor closed
+[DEBUG] Connection closed
+[DEBUG] Forgot password result: Error: please run connect() first
+[DEBUG] WSGI script triggered
+[DEBUG] Request method: GET
+[DEBUG] POST/GET data: email=handelgakuru@gmail.com
+[DEBUG] Parsed email: handelgakuru@gmail.com
+[DEBUG] forgot_password() called
+[DEBUG] DB connection object: <pymysql.connections.Connection object at 0x7b83be1e0e10>
+[DEBUG] Cursor created
+[DEBUG] User email lookup result: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] Token generated and DB updated for handelgakuru@gmail.com
+[DEBUG] Attempting SMTP login
+[DEBUG] Error in forgot_password(): please run connect() first
+[DEBUG] Cursor closed
+[DEBUG] Connection closed
+[DEBUG] Forgot password result: Error: please run connect() first
+[DEBUG] WSGI script triggered
+[DEBUG] Request method: GET
+[DEBUG] POST/GET data: email=handelgakuru@gmail.com
+[DEBUG] Parsed email: handelgakuru@gmail.com
+[DEBUG] forgot_password() called
+[DEBUG] DB connection object: <pymysql.connections.Connection object at 0x7cf694fb9010>
+[DEBUG] Cursor created
+[DEBUG] User email lookup result: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] Token generated and DB updated for handelgakuru@gmail.com
+[DEBUG] Attempting SMTP login
+[DEBUG] Error in forgot_password(): please run connect() first
+[DEBUG] Cursor closed
+[DEBUG] Connection closed
+[DEBUG] Forgot password result: Error: please run connect() first
+[DEBUG] WSGI script triggered
+[DEBUG] Request method: GET
+[DEBUG] POST/GET data: email=handelgakuru@gmail.com
+[DEBUG] Parsed email: handelgakuru@gmail.com
+[DEBUG] forgot_password() called
+[DEBUG] DB connection object: <pymysql.connections.Connection object at 0x7cf68fe48e10>
+[DEBUG] Cursor created
+[DEBUG] User email lookup result: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] Token generated and DB updated for handelgakuru@gmail.com
+[DEBUG] Attempting SMTP login
+[DEBUG] Error in forgot_password(): please run connect() first
+[DEBUG] Cursor closed
+[DEBUG] Connection closed
+[DEBUG] Forgot password result: Error: please run connect() first
+[DEBUG] WSGI script triggered
+[DEBUG] Request method: GET
+[DEBUG] POST/GET data: email=handelgakuru@gmail.com
+[DEBUG] Parsed email: handelgakuru@gmail.com
+[DEBUG] forgot_password() called
+[DEBUG] DB connection object: <pymysql.connections.Connection object at 0x7cf68fe491d0>
+[DEBUG] Cursor created
+[DEBUG] User email lookup result: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] Token generated and DB updated for handelgakuru@gmail.com
+[DEBUG] Attempting SMTP login
+[DEBUG] Error in forgot_password(): please run connect() first
+[DEBUG] Cursor closed
+[DEBUG] Connection closed
+[DEBUG] Forgot password result: Error: please run connect() first
+[DEBUG] WSGI script triggered
+[DEBUG] Request method: GET
+[DEBUG] POST/GET data: email=benleechom@gmail.com
+[DEBUG] Parsed email: benleechom@gmail.com
+[DEBUG] forgot_password() called
+[DEBUG] DB connection object: <pymysql.connections.Connection object at 0x7cf68fe48f50>
+[DEBUG] Cursor created
+[DEBUG] User email lookup result: {'email': 'benleechom@gmail.com'}
+[DEBUG] Token generated and DB updated for benleechom@gmail.com
+[DEBUG] Attempting SMTP login
+[DEBUG] Error in forgot_password(): please run connect() first
+[DEBUG] Cursor closed
+[DEBUG] Connection closed
+[DEBUG] Forgot password result: Error: please run connect() first
+[DEBUG] WSGI script triggered
+[DEBUG] Request method: GET
+[DEBUG] POST/GET data: email=benleechom@gmail.com
+[DEBUG] Parsed email: benleechom@gmail.com
+[DEBUG] forgot_password() called
+[DEBUG] DB connection object: <pymysql.connections.Connection object at 0x73da337bd010>
+[DEBUG] Cursor created
+[DEBUG] User email lookup result: {'email': 'benleechom@gmail.com'}
+[DEBUG] Token generated and DB updated for benleechom@gmail.com
+[DEBUG] Attempting SMTP login
+[DEBUG] Error in forgot_password(): please run connect() first
+[DEBUG] Cursor closed
+[DEBUG] Connection closed
+[DEBUG] Forgot password result: Error: please run connect() first
+[DEBUG] WSGI script triggered
+[DEBUG] Request method: GET
+[DEBUG] POST/GET data: email=handelgakuru@gmail.com
+[DEBUG] Parsed email: handelgakuru@gmail.com
+[DEBUG] forgot_password() called
+[DEBUG] DB connection object: <pymysql.connections.Connection object at 0x73da3265ce10>
+[DEBUG] Cursor created
+[DEBUG] User email lookup result: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] Token generated and DB updated for handelgakuru@gmail.com
+[DEBUG] Attempting SMTP login
+[DEBUG] Error in forgot_password(): please run connect() first
+[DEBUG] Cursor closed
+[DEBUG] Connection closed
+[DEBUG] Forgot password result: Error: please run connect() first
+[DEBUG] WSGI script triggered
+[DEBUG] Request method: GET
+[DEBUG] POST/GET data: email=handelgakuru@gmail.com
+[DEBUG] Parsed email: handelgakuru@gmail.com
+[DEBUG] forgot_password() called
+[DEBUG] DB connection object: <pymysql.connections.Connection object at 0x73da3265d090>
+[DEBUG] Cursor created
+[DEBUG] User email lookup result: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] Token generated and DB updated for handelgakuru@gmail.com
+[DEBUG] Attempting SMTP login
+[DEBUG] Error in forgot_password(): please run connect() first
+[DEBUG] Cursor closed
+[DEBUG] Connection closed
+[DEBUG] Forgot password result: Error: please run connect() first
+[DEBUG] WSGI script triggered
+[DEBUG] Request method: GET
+[DEBUG] POST/GET data: email=handelgakuru@gmail.com
+[DEBUG] Parsed email: handelgakuru@gmail.com
+[DEBUG] forgot_password() called
+[DEBUG] DB connection object: <pymysql.connections.Connection object at 0x73da3265d310>
+[DEBUG] Cursor created
+[DEBUG] User email lookup result: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] Token generated and DB updated for handelgakuru@gmail.com
+[DEBUG] Attempting SMTP login
+[DEBUG] Error in forgot_password(): please run connect() first
+[DEBUG] Cursor closed
+[DEBUG] Connection closed
+[DEBUG] Forgot password result: Error: please run connect() first
+[DEBUG] WSGI script triggered
+[DEBUG] Request method: GET
+[DEBUG] POST/GET data: email=handelgakuru@gmail.com
+[DEBUG] Parsed email: handelgakuru@gmail.com
+[DEBUG] forgot_password() called
+[DEBUG] DB connection object: <pymysql.connections.Connection object at 0x72d3d98e9010>
+[DEBUG] Cursor created
+[DEBUG] User email lookup result: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] Token generated and DB updated for handelgakuru@gmail.com
+[DEBUG] Attempting SMTP login
+[DEBUG] Error in forgot_password(): please run connect() first
+[DEBUG] Cursor closed
+[DEBUG] Connection closed
+[DEBUG] Forgot password result: Error: please run connect() first
+[DEBUG] WSGI script triggered
+[DEBUG] Request method: GET
+[DEBUG] POST/GET data: email=handelgakuru@gmail.com
+[DEBUG] Parsed email: handelgakuru@gmail.com
+[DEBUG] forgot_password() called
+[DEBUG] DB connection object: <pymysql.connections.Connection object at 0x7b359f29d010>
+[DEBUG] Cursor created
+[DEBUG] User email lookup result: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] Token generated and DB updated for handelgakuru@gmail.com
+[DEBUG] Attempting SMTP login
+[DEBUG] Error in forgot_password(): please run connect() first
+[DEBUG] Cursor closed
+[DEBUG] Connection closed
+[DEBUG] Forgot password result: Error: please run connect() first
+[DEBUG] WSGI script triggered
+[DEBUG] Request method: GET
+[DEBUG] POST/GET data: email=handelgakuru@gmail.com
+[DEBUG] Parsed email: handelgakuru@gmail.com
+[DEBUG] forgot_password() called
+[DEBUG] DB connection object: <pymysql.connections.Connection object at 0x7b359e140e10>
+[DEBUG] Cursor created
+[DEBUG] User email lookup result: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] Token generated and DB updated for handelgakuru@gmail.com
+[DEBUG] Attempting SMTP login
+[DEBUG] Error in forgot_password(): please run connect() first
+[DEBUG] Cursor closed
+[DEBUG] Connection closed
+[DEBUG] Forgot password result: Error: please run connect() first
+[DEBUG] 2025-04-10 06:09:00.436178 - WSGI Triggered
+[DEBUG] 2025-04-10 06:09:00.439836 - Method: GET, Query: email=handelgakuru@gmail.com
+[DEBUG] 2025-04-10 06:09:00.443269 - forgot_password() called
+[DEBUG] 2025-04-10 06:09:00.464471 - Database connected and cursor created
+[DEBUG] 2025-04-10 06:09:00.489169 - Email lookup: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] 2025-04-10 06:09:00.985325 - Email response: 401 - {"message":"authentication not found in headers","code":"unauthorized"}
+
+[DEBUG] 2025-04-10 06:09:00.990931 - DB connection closed
+[DEBUG] 2025-04-10 06:11:18.302248 - WSGI Triggered
+[DEBUG] 2025-04-10 06:11:18.305187 - Method: GET, Query: email=handelgakuru@gmail.com
+[DEBUG] 2025-04-10 06:11:18.309315 - forgot_password() called
+[DEBUG] 2025-04-10 06:11:18.339902 - Database connected and cursor created
+[DEBUG] 2025-04-10 06:11:18.351190 - Email lookup: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] 2025-04-10 06:11:18.794587 - Email response: 401 - {"message":"authentication not found in headers","code":"unauthorized"}
+
+[DEBUG] 2025-04-10 06:11:18.799513 - DB connection closed
+[DEBUG] 2025-04-10 07:05:15.285077 - WSGI Triggered
+[DEBUG] 2025-04-10 07:05:15.290015 - Method: GET, Query: email=handelgakuru@gmail.com
+[DEBUG] 2025-04-10 07:05:15.294213 - forgot_password() called
+[DEBUG] 2025-04-10 07:05:15.304660 - Database connected and cursor created
+[DEBUG] 2025-04-10 07:05:15.317228 - Email lookup: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] 2025-04-10 07:05:15.748765 - Email response: 401 - {"message":"authentication not found in headers","code":"unauthorized"}
+
+[DEBUG] 2025-04-10 07:05:15.754042 - DB connection closed
+[DEBUG] 2025-04-10 07:05:39.348191 - WSGI Triggered
+[DEBUG] 2025-04-10 07:05:39.352071 - Method: GET, Query: email=handelgakuru@gmail.com
+[DEBUG] 2025-04-10 07:05:39.356142 - forgot_password() called
+[DEBUG] 2025-04-10 07:05:39.368573 - Database connected and cursor created
+[DEBUG] 2025-04-10 07:05:39.375942 - Email lookup: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] 2025-04-10 07:05:39.819050 - Email response: 401 - {"message":"authentication not found in headers","code":"unauthorized"}
+
+[DEBUG] 2025-04-10 07:05:39.822793 - DB connection closed
+[DEBUG] 2025-04-10 07:15:05.492893 - WSGI Triggered
+[DEBUG] 2025-04-10 07:15:05.497287 - Method: GET, Query: email=handelgakuru@gmail.com
+[DEBUG] 2025-04-10 07:15:05.501013 - forgot_password() called
+[DEBUG] 2025-04-10 07:15:05.515763 - Email lookup: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] 2025-04-10 07:15:05.953094 - Email response: 401 - {"message":"authentication not found in headers","code":"unauthorized"}
+
+[DEBUG] 2025-04-10 07:15:05.956160 - DB connection closed
+[DEBUG] 2025-04-10 07:15:35.060797 - WSGI Triggered
+[DEBUG] 2025-04-10 07:15:35.064548 - Method: POST, Query: 
+[DEBUG] 2025-04-10 07:15:35.068721 - forgot_password() called
+[DEBUG] 2025-04-10 07:15:35.082060 - Email lookup: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] 2025-04-10 07:15:35.508633 - Email response: 401 - {"message":"authentication not found in headers","code":"unauthorized"}
+
+[DEBUG] 2025-04-10 07:15:35.511968 - DB connection closed
+[DEBUG] 2025-04-10 07:18:37.235060 - WSGI Triggered
+[DEBUG] 2025-04-10 07:18:37.239075 - Method: POST, Query: 
+[DEBUG] 2025-04-10 07:18:37.243239 - forgot_password() called
+[DEBUG] 2025-04-10 07:18:37.260481 - Email lookup: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] 2025-04-10 07:18:37.700282 - Email response: 401 - {"message":"token is invalid or expired","code":"unauthorized"}
+
+[DEBUG] 2025-04-10 07:18:37.704400 - DB connection closed
+[DEBUG] 2025-04-10 07:19:09.713168 - WSGI Triggered
+[DEBUG] 2025-04-10 07:19:09.716506 - Method: POST, Query: 
+[DEBUG] 2025-04-10 07:19:09.719981 - forgot_password() called
+[DEBUG] 2025-04-10 07:19:09.733334 - Email lookup: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] 2025-04-10 07:19:10.170433 - Email response: 401 - {"message":"token is invalid or expired","code":"unauthorized"}
+
+[DEBUG] 2025-04-10 07:19:10.175849 - DB connection closed
+[DEBUG] 2025-04-10 07:25:10.061434 - WSGI Triggered
+[DEBUG] 2025-04-10 07:25:10.065219 - Method: POST, Query: 
+[DEBUG] 2025-04-10 07:25:10.069745 - forgot_password() called
+[DEBUG] 2025-04-10 07:25:10.091074 - Email lookup: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] 2025-04-10 07:25:10.543337 - Email response: 401 - {"message":"token is invalid or expired","code":"unauthorized"}
+
+[DEBUG] 2025-04-10 07:25:10.548841 - DB connection closed
+[DEBUG] 2025-04-10 07:35:56.348811 - WSGI Triggered
+[DEBUG] 2025-04-10 07:35:56.352685 - Method: POST, Query: 
+[DEBUG] 2025-04-10 07:35:56.356874 - forgot_password() called
+[DEBUG] 2025-04-10 07:35:56.374980 - Email lookup: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] 2025-04-10 07:35:56.821366 - Email response: 401 - {"message":"token is invalid or expired","code":"unauthorized"}
+
+[DEBUG] 2025-04-10 07:35:56.825374 - DB connection closed
+[DEBUG] 2025-04-10 11:51:43.670861 - WSGI Triggered
+[DEBUG] 2025-04-10 11:51:43.675364 - Method: GET, Query: email=handelgakuru@gmail.com
+[DEBUG] 2025-04-10 11:51:43.679561 - forgot_password() called
+[DEBUG] 2025-04-10 11:51:43.753596 - Email lookup: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] 2025-04-10 11:51:44.190768 - Email response: 401 - {"message":"token is invalid or expired","code":"unauthorized"}
+
+[DEBUG] 2025-04-10 11:51:44.194444 - DB connection closed
+[DEBUG] 2025-04-10 11:59:26.049000 - WSGI Triggered
+[DEBUG] 2025-04-10 11:59:26.052763 - Method: GET, Query: email=handelgakuru@gmail.com
+[DEBUG] 2025-04-10 11:59:26.056355 - forgot_password() called
+[DEBUG] 2025-04-10 11:59:26.074968 - Email lookup: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] 2025-04-10 11:59:26.551064 - Email response: 401 - {"message":"token is invalid or expired","code":"unauthorized"}
+
+[DEBUG] 2025-04-10 11:59:26.554990 - DB connection closed
+[DEBUG] 2025-04-10 12:10:22.478197 - WSGI Triggered
+[DEBUG] 2025-04-10 12:10:22.483196 - Method: GET, Query: email=handelgakuru@gmail.com
+[DEBUG] 2025-04-10 12:10:22.486916 - forgot_password() called
+[DEBUG] 2025-04-10 12:10:22.505062 - Email lookup: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] 2025-04-10 12:10:22.958235 - Email response: 401 - {"message":"token is invalid or expired","code":"unauthorized"}
+
+[DEBUG] 2025-04-10 12:10:22.962629 - DB connection closed
+[DEBUG] 2025-04-10 12:13:14.920126 - WSGI Triggered
+[DEBUG] 2025-04-10 12:13:14.923516 - Method: GET, Query: email=handelgakuru@gmail.com
+[DEBUG] 2025-04-10 12:13:14.928718 - forgot_password() called
+[DEBUG] 2025-04-10 12:13:14.976385 - Email lookup: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] 2025-04-10 12:13:15.480726 - Email response: 401 - {"message":"token is invalid or expired","code":"unauthorized"}
+
+[DEBUG] 2025-04-10 12:13:15.485339 - DB connection closed
+[DEBUG] 2025-04-10 12:24:42.873422 - WSGI Triggered
+[DEBUG] 2025-04-10 12:24:42.877210 - Method: GET, Query: email=handelgakuru@gmail.com
+[DEBUG] 2025-04-10 12:24:42.881042 - forgot_password() called
+[DEBUG] 2025-04-10 12:24:42.895596 - Email lookup: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] 2025-04-10 12:24:43.358834 - Email response: 201 - {"messageId":"<202504101224.18509837544@smtp-relay.mailin.fr>"}
+
+[DEBUG] 2025-04-10 12:24:43.362671 - DB connection closed
+[DEBUG] 2025-04-10 13:02:08.552109 - WSGI Triggered
+[DEBUG] 2025-04-10 13:02:08.558129 - Method: POST, Query: 
+[DEBUG] 2025-04-10 13:02:08.562309 - forgot_password() called
+[DEBUG] 2025-04-10 13:02:08.580367 - Email lookup: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] 2025-04-10 13:02:09.101565 - Email response: 201 - {"messageId":"<202504101302.99255922361@smtp-relay.mailin.fr>"}
+
+[DEBUG] 2025-04-10 13:02:09.105605 - DB connection closed
+[DEBUG] 2025-04-10 15:46:05.277459 - WSGI Triggered
+[DEBUG] 2025-04-10 15:46:05.282314 - Method: POST, Query: 
+[DEBUG] 2025-04-10 15:46:05.285890 - forgot_password() called
+[DEBUG] 2025-04-10 15:46:05.300165 - Email lookup: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] 2025-04-10 15:46:05.851937 - Email response: 201 - {"messageId":"<202504101546.48483263893@smtp-relay.mailin.fr>"}
+
+[DEBUG] 2025-04-10 15:46:05.857561 - DB connection closed
+[DEBUG] 2025-04-11 06:53:04.730637 - WSGI Triggered
+[DEBUG] 2025-04-11 06:53:04.737038 - Method: POST, Query: 
+[DEBUG] 2025-04-11 06:53:04.776829 - forgot_password() called
+[DEBUG] 2025-04-11 06:53:05.209852 - Email lookup: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] 2025-04-11 06:53:05.901619 - Email response: 201 - {"messageId":"<202504110653.24300386368@smtp-relay.mailin.fr>"}
+
+[DEBUG] 2025-04-11 06:53:05.905713 - DB connection closed
+[DEBUG] 2025-04-11 15:51:36.996001 - WSGI Triggered
+[DEBUG] 2025-04-11 15:51:37.001957 - Method: POST, Query: 
+[DEBUG] 2025-04-11 15:51:37.005628 - forgot_password() called
+[DEBUG] 2025-04-11 15:51:37.018687 - Email lookup: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] 2025-04-11 15:51:37.431749 - Email response: 201 - {"messageId":"<202504111551.42751175935@smtp-relay.mailin.fr>"}
+
+[DEBUG] 2025-04-11 15:51:37.435558 - DB connection closed
+[DEBUG] 2025-04-11 23:49:54.060697 - WSGI Triggered
+[DEBUG] 2025-04-11 23:49:54.097838 - Method: GET, Query: email=handelgakuru@gmail.com
+[DEBUG] 2025-04-11 23:49:54.101062 - forgot_password() called
+[DEBUG] 2025-04-11 23:49:54.118120 - Email lookup: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] 2025-04-11 23:49:54.512356 - Email response: 201 - {"messageId":"<202504112349.88164148474@smtp-relay.mailin.fr>"}
+
+[DEBUG] 2025-04-11 23:49:54.516400 - DB connection closed
+[2025-04-11 23:50:55.276190] Token check result: None
+[DEBUG] 2025-04-11 23:58:47.843582 - WSGI Triggered
+[DEBUG] 2025-04-11 23:58:47.848589 - Method: GET, Query: email=handelgakuru@gmail.com
+[DEBUG] 2025-04-11 23:58:47.853182 - forgot_password() called
+[DEBUG] 2025-04-11 23:58:47.878112 - Email lookup: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] 2025-04-11 23:58:48.349463 - Email response: 201 - {"messageId":"<202504112358.89954769500@smtp-relay.mailin.fr>"}
+
+[DEBUG] 2025-04-11 23:58:48.353100 - DB connection closed
+[RESET DEBUG 2025-04-12 00:00:43.013428] Token received: e134de7f-888d-430f-b856-09c4a6689b76
+[RESET DEBUG 2025-04-12 00:00:43.419247] Exception: (1054, "Unknown column 'password' in 'field list'")
+[DEBUG] 2025-04-12 06:52:27.928448 - WSGI Triggered
+[DEBUG] 2025-04-12 06:52:27.933142 - Method: GET, Query: email=handelgakuru@gmail.com
+[DEBUG] 2025-04-12 06:52:27.936709 - forgot_password() called
+[DEBUG] 2025-04-12 06:52:28.006085 - Email lookup: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] 2025-04-12 06:52:28.398773 - Email response: 201 - {"messageId":"<202504120652.68236159831@smtp-relay.mailin.fr>"}
+
+[DEBUG] 2025-04-12 06:52:28.403964 - DB connection closed
+[DEBUG] 2025-04-12 06:52:52.567604 - WSGI Triggered
+[DEBUG] 2025-04-12 06:52:52.571367 - Method: GET, Query: email=handelgakuru@gmail.com
+[DEBUG] 2025-04-12 06:52:52.574891 - forgot_password() called
+[DEBUG] 2025-04-12 06:52:52.589853 - Email lookup: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] 2025-04-12 06:52:52.964597 - Email response: 201 - {"messageId":"<202504120652.31345499718@smtp-relay.mailin.fr>"}
+
+[DEBUG] 2025-04-12 06:52:52.968328 - DB connection closed
+[DEBUG] 2025-04-12 07:03:38.009164 - WSGI Triggered
+[DEBUG] 2025-04-12 07:03:38.013527 - Method: GET, Query: email=handelgakuru@gmail.com
+[DEBUG] 2025-04-12 07:03:38.016873 - forgot_password() called
+[DEBUG] 2025-04-12 07:03:38.035063 - Email lookup: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] 2025-04-12 07:03:38.406251 - Email response: 201 - {"messageId":"<202504120703.87152673646@smtp-relay.mailin.fr>"}
+
+[DEBUG] 2025-04-12 07:03:38.409892 - DB connection closed
+[DEBUG] 2025-04-12 07:07:44.958933+00:00 - WSGI Triggered
+[DEBUG] 2025-04-12 07:07:44.963609+00:00 - Method: GET, Query: email=handelgakuru@gmail.com
+[DEBUG] 2025-04-12 07:07:44.967901+00:00 - forgot_password() called
+[DEBUG] 2025-04-12 07:07:44.982480+00:00 - Email lookup: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] 2025-04-12 07:07:45.376285+00:00 - Email response: 201 - {"messageId":"<202504120707.24589578912@smtp-relay.mailin.fr>"}
+
+[DEBUG] 2025-04-12 07:07:45.381218+00:00 - DB connection closed
+[DEBUG] 2025-04-12 07:11:19.563290+00:00 - WSGI Triggered
+[DEBUG] 2025-04-12 07:11:19.568875+00:00 - Method: GET, Query: email=handelgakuru@gmail.com
+[DEBUG] 2025-04-12 07:11:19.572545+00:00 - forgot_password() called
+[DEBUG] 2025-04-12 07:11:19.591407+00:00 - Email lookup: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] 2025-04-12 07:11:19.998187+00:00 - Email response: 201 - {"messageId":"<202504120711.70357214270@smtp-relay.mailin.fr>"}
+
+[DEBUG] 2025-04-12 07:11:20.001774+00:00 - DB connection closed
+[DEBUG] 2025-04-12 07:24:14.988563+00:00 - WSGI Triggered
+[DEBUG] 2025-04-12 07:24:14.993392+00:00 - Method: GET, Query: email=handelgakuru@gmail.com
+[DEBUG] 2025-04-12 07:24:14.996993+00:00 - forgot_password() called
+[DEBUG] 2025-04-12 07:24:15.015292+00:00 - Email lookup: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] 2025-04-12 07:24:15.417043+00:00 - Email response: 201 - {"messageId":"<202504120724.51727526880@smtp-relay.mailin.fr>"}
+
+[DEBUG] 2025-04-12 07:24:15.420888+00:00 - DB connection closed
+[DEBUG] 2025-04-12 19:00:23.981731+00:00 - WSGI Triggered
+[DEBUG] 2025-04-12 19:00:23.987327+00:00 - Method: POST, Query: 
+[DEBUG] 2025-04-12 19:00:23.991098+00:00 - forgot_password() called
+[DEBUG] 2025-04-12 19:00:24.007998+00:00 - Email lookup: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] 2025-04-12 19:00:24.420616+00:00 - Email response: 201 - {"messageId":"<202504121900.30380513138@smtp-relay.mailin.fr>"}
+
+[DEBUG] 2025-04-12 19:00:24.424555+00:00 - DB connection closed
+[DEBUG] 2025-04-12 21:38:50.557420+00:00 - WSGI Triggered
+[DEBUG] 2025-04-12 21:38:50.562789+00:00 - Method: POST, Query: 
+[DEBUG] 2025-04-12 21:38:50.566914+00:00 - forgot_password() called
+[DEBUG] 2025-04-12 21:38:50.580856+00:00 - Email lookup: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] 2025-04-12 21:38:50.987801+00:00 - Email response: 201 - {"messageId":"<202504122138.34371921228@smtp-relay.mailin.fr>"}
+
+[DEBUG] 2025-04-12 21:38:50.991653+00:00 - DB connection closed
+[DEBUG] 2025-05-23 15:10:55.134659+00:00 - WSGI Triggered
+[DEBUG] 2025-05-23 15:10:55.138668+00:00 - Method: GET, Query: email=handelgakuru@gmail.com
+[DEBUG] 2025-05-23 15:10:55.142629+00:00 - forgot_password() called
+[DEBUG] 2025-05-23 15:10:55.243069+00:00 - Email lookup: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] 2025-05-23 15:10:55.687364+00:00 - Email response: 401 - {"message":"authentication not found in headers","code":"unauthorized"}
+
+[DEBUG] 2025-05-23 15:10:55.692257+00:00 - DB connection closed
+[DEBUG] 2025-05-23 15:29:45.975784+00:00 - WSGI Triggered
+[DEBUG] 2025-05-23 15:29:45.982298+00:00 - Method: GET, Query: email=handelgakuru@gmail.com
+[DEBUG] 2025-05-23 15:29:45.986248+00:00 - forgot_password() called
+[DEBUG] 2025-05-23 15:29:46.026511+00:00 - Email lookup: {'email': 'handelgakuru@gmail.com'}
+[DEBUG] 2025-05-23 15:29:46.062376+00:00 - Using Brevo API key: xkeysib-72...
+[DEBUG] 2025-05-23 15:29:46.390769+00:00 - Email response: 201 - {"messageId":"<202505231529.87790328695@smtp-relay.mailin.fr>"}
+
+[DEBUG] 2025-05-23 15:29:46.394992+00:00 - DB connection closed

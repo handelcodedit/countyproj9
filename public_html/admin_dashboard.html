@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- DataTables CSS -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.min.css">
+
+<!-- jQuery (Ensure this is included before DataTables) -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<!-- DataTables JS -->
+<script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.min.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="/css/master_style.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <script src="/javascript/session.js"></script>
+    <script src="/javascript/dashboard.js"></script>
+
+</head>
+<body onload="fetchScheduledReports()">
+      <!-- Navigation Bar -->
+       <nav class="navbar">
+    <div class="menu-left">
+        <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+
+    </div>
+    <ul class="nav-links" id="nav-links">
+        <li><a href="adminhome.html">Home</a></li>
+        <li><a href="admin_userprofile.html">User Profile</a></li>
+        <li><a href="admin_survey.html">Survey</a></li>
+        <li><a href="admin_dashboard.html">Dashboard</a></li>
+        <li><a href="govdesk.html">GovDesk</a></li>
+    </ul>
+
+        <form action="https://handel.pythonanywhere.com/logout" method="POST">
+            <input type="hidden" name="session_id" id="session_id">
+            <button type="submit" class="logout-btn">LOGOUT</button>
+        </form>
+</nav>
+
+
+    <div id="reports" class="datatable-container">
+        <table id="reportsTable" class="display">
+            <thead>
+                <tr>
+                    <th>Project Name</th>
+                    <th>Status</th>
+                    <th>Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data will be inserted here dynamically -->
+            </tbody>
+        </table>
+    </div>
+
+    <div id="chartContainer">
+        <canvas id="myChart"></canvas>
+    </div>
+    <div id="chartContainer2">
+        <canvas id="countyChart"></canvas>
+    </div>
+
+    <script>
+         $.fn.dataTable.ext.errMode = 'none';
+        function getCookie(name) {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = cookies[i].trim();
+                if (cookie.startsWith(name + '=')) {
+                    return cookie.substring(name.length + 1);
+                }
+            }
+            return null;
+        }
+
+        function fetchScheduledReports() {
+            var sessionID = getCookie('session_id'); // Retrieve session ID from cookie
+
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        var reports = JSON.parse(xhr.responseText);
+                        displayReports(reports);
+                    } else {
+                        console.error("Error: " + xhr.status);
+                    }
+                }
+            };
+            xhr.open('POST', 'https://handel.pythonanywhere.com/scheduledreports', true);
+            xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+            xhr.send('session_id=' + encodeURIComponent(sessionID));
+        }
+
+        function displayReports(reports) {
+            var tableBody = document.querySelector('#reportsTable tbody');
+            tableBody.innerHTML = ""; // Clear existing data
+
+            for (var status in reports) {
+                if (reports.hasOwnProperty(status)) {
+                    var periods = reports[status];
+                    for (var period in periods) {
+                        if (periods.hasOwnProperty(period)) {
+                            var projectList = periods[period];
+                            if (projectList.length > 0) {
+                                projectList.forEach(function(project) {
+                                    var row = document.createElement('tr');
+                                    var projectNameCell = document.createElement('td');
+                                    projectNameCell.innerText = project.project_name;
+                                    var statusCell = document.createElement('td');
+                                    statusCell.innerText = status;
+                                    var dateCell = document.createElement('td');
+                                    dateCell.innerText = project.date;
+
+                                    row.appendChild(projectNameCell);
+                                    row.appendChild(statusCell);
+                                    row.appendChild(dateCell);
+                                    tableBody.appendChild(row);
+                                });
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+
+    <!-- Footer -->
+    <footer class="footer">
+        &copy; 2025 All rights reserved. handelcodedit.
+    </footer>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    if (toggle && navLinks) {
+      toggle.addEventListener("click", function () {
+        navLinks.classList.toggle("show");
+      });
+    }
+  });
+</script>
+
+</body>
+</html>

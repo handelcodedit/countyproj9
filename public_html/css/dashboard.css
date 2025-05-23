@@ -1,0 +1,33 @@
+
+        #chartContainer {
+            width: 100%;
+            overflow-x: scroll;
+        }
+        #chartContainer canvas {
+            width: 100%; /* Full width of the container */
+            height: 400px; /* Adjust height as needed */
+        }
+        #chartContainer2 {
+            width: 100%;
+            overflow-x: scroll;
+        }
+        #chartContainer2 canvas {
+            width: 100%; /* Full width of the container */
+            height: 400px; /* Adjust height as needed */
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .datatable-container {
+            padding: 20px 0; /* Adds top and bottom padding */
+        }
+        
